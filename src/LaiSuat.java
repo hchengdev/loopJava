@@ -12,8 +12,11 @@ public class LaiSuat {
         System.out.println("Số tháng cho vay: ");
         Double month = scanner.nextDouble();
 
-        Double interestAmount = money * laiSuat / 12 * month;
-        System.out.println("Số tiền lãi là: " + interestAmount);
+        double totalInterest = 0;
+        for(int i = 0; i < month; i++){
+            totalInterest += money * (totalInterest/100)/12 * month;
+        }
+        System.out.println("Số tiền lãi là: " + totalInterest);
 
     }
 }
